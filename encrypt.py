@@ -23,7 +23,7 @@ def decrypt(password, content):
 
 def run(password, password_two, input_file_path, output_file_path):
     if password != password_two:
-        raise "your passwords didn't match. try again."
+        raise BaseException('your passwords didnt match. try again.')
     password_bytes = str.encode(password)
     # verify input
     if not os.path.exists(input_file_path):

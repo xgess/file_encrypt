@@ -24,7 +24,7 @@ def decrypt(password, content):
 def run(password, encrypted_file_path, decrypted_file_path):
     password_bytes = str.encode(password)
     if not os.path.exists(encrypted_file_path):
-        raise "that file doesn't exist!"
+        raise BaseException('That file does not exist.')
     if os.path.exists(decrypted_file_path):
         # if the file is already there, add another `.csv` because why not
         decrypted_file_path += '.csv'
